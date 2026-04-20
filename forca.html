@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Forca da Maju</title>
+    <link rel="stylesheet" href="forca.css">
+</head>
+
+<body>
+
+    <h1>Jogo da Forca da Maju</h1>
+
+    <div id="setup" class="setup-area">
+        <p>Jogador 1: Digite a palavra secreta abaixo</p>
+        <input type="password" id="inputPalavra" placeholder="Ex: TECNOLOGIA">
+        <button onclick="iniciarJogo()">Começar!</button>
+    </div>
+
+    <div id="jogo">
+        <canvas id="canvas-forca" width="200" height="250"></canvas>
+        <div id="displayPalavra" class="palavra-container"></div>
+        <div id="mensagem"></div>
+        <div class="teclado" id="teclado"></div>
+        <br>
+        <button id="reiniciar" onclick="location.reload()">Reiniciar Jogo</button>
+    </div>
+    <footer>
+        <p>Desenvolvido pelo papai para minha Majuzinha <span>❤️</span></p>
+    </footer>
+
+    <script src="forca.js"></script>
+</body>
+
+</html>
