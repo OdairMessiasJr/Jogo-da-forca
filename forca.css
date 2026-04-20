@@ -53,6 +53,16 @@ button:disabled {
     cursor: not-allowed;
 }
 
+.acerto {
+    background: #27ae60 !important;
+    color: white;
+}
+
+.erro {
+    background: #e74c3c !important;
+    color: white;
+}
+
 .setup-area {
     margin: 20px;
     display: flex;

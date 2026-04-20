@@ -376,10 +376,12 @@ function gerarTeclado() {
 function verificarLetra(letra, botao) {
     botao.disabled = true;
     if (palavraSecreta.includes(letra)) {
+        botao.classList.add('acerto');
         letrasTentadas.push(letra);
         atualizarDisplay();
         verificarVitoria();
     } else {
+        botao.classList.add('erro');
         erros++;
         desenharCenaInteira();
         if (erros === 6) terminarJogo(false);
