@@ -57,6 +57,9 @@ button:disabled {
     margin: 20px;
     text-align: center;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .setup-area::before,
@@ -81,7 +84,7 @@ button:disabled {
 }
 
 #livro {
-    margin-top: 30px;
+    margin-top: 50px;
     width: 200px;
     height: 150px;
     background: #8B4513;
@@ -89,7 +92,6 @@ button:disabled {
     border-radius: 5px;
     position: relative;
     cursor: pointer;
-    display: inline-block;
     box-shadow: 0 4px 8px rgba(0,0,0,0.3);
     transition: transform 0.2s;
 }
@@ -113,8 +115,6 @@ button:disabled {
     font-weight: bold;
     color: #333;
     text-align: center;
-    writing-mode: vertical-rl;
-    text-orientation: mixed;
 }
 
 #instrucoes {
