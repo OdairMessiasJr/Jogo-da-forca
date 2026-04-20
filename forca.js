@@ -24,6 +24,22 @@ function desenharLava(offsetAnimacao = 0) {
     ctx.fill();
 }
 
+function desenharGrama() {
+    // Fundo da grama
+    ctx.fillStyle = "#27ae60";
+    ctx.fillRect(0, 215, 200, 35);
+    
+    // Folhas de grama
+    ctx.fillStyle = "#2ecc71";
+    for(let i=0; i<200; i+=10) {
+        ctx.beginPath();
+        ctx.moveTo(i, 215);
+        ctx.lineTo(i+5, 200);
+        ctx.lineTo(i+10, 215);
+        ctx.fill();
+    }
+}
+
 function desenharCenaInteira(quedaY = 0, hideRope = false, splashY = null) {
     ctx.clearRect(0, 0, canvas.width, canvas.height); 
     
@@ -58,6 +74,16 @@ function desenharCenaInteira(quedaY = 0, hideRope = false, splashY = null) {
 
     // A lava é desenhada por cima do boneco para ele afundar nela
     desenharLava(quedaY);
+}
+
+function desenharCenaVitoria() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    
+    // Desenha o boneco completo sorridente em pé
+    desenharBonecoVitoria();
+    
+    // Desenha a grama
+    desenharGrama();
 }
 
 function desenharBoneco(parte) {
@@ -197,6 +223,115 @@ function desenharBoneco(parte) {
     }
 }
 
+function desenharBonecoVitoria() {
+    ctx.strokeStyle = "#333";
+    ctx.lineWidth = 1.5;
+
+    // Cabeça, rosto e cabelo sorridente
+    // Cabelo (fundo)
+    ctx.fillStyle = "#5c3a21";
+    ctx.beginPath();
+    ctx.arc(100, 70, 22, 0, Math.PI * 2);
+    ctx.fill();
+    
+    // Rosto
+    ctx.fillStyle = "#ffe0bd";
+    ctx.beginPath();
+    ctx.arc(100, 75, 18, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.stroke();
+    
+    // Olhinhos felizes
+    ctx.fillStyle = "#333";
+    ctx.beginPath();
+    ctx.arc(94, 66, 2.5, 0, Math.PI * 2);
+    ctx.arc(106, 66, 2.5, 0, Math.PI * 2);
+    ctx.fill();
+    
+    // Bochechas rosadas
+    ctx.fillStyle = "#ffb3c6";
+    ctx.beginPath();
+    ctx.arc(89, 71, 3, 0, Math.PI * 2);
+    ctx.arc(111, 71, 3, 0, Math.PI * 2);
+    ctx.fill();
+
+    // Boquinha sorridente
+    ctx.beginPath();
+    ctx.arc(100, 78, 4, 0, Math.PI);
+    ctx.stroke();
+    
+    // Franjinha
+    ctx.fillStyle = "#5c3a21";
+    ctx.beginPath();
+    ctx.arc(100, 56, 18, Math.PI, 0);
+    ctx.fill();
+    
+    // Marias-chiquinhas
+    ctx.beginPath();
+    ctx.arc(76, 65, 10, 0, Math.PI * 2);
+    ctx.arc(124, 65, 10, 0, Math.PI * 2);
+    ctx.fill();
+
+    // Corpo (Vestidinho rosa)
+    ctx.fillStyle = "#ff9a9e";
+    ctx.beginPath();
+    ctx.moveTo(92, 93);
+    ctx.lineTo(108, 93); 
+    ctx.lineTo(118, 155); 
+    ctx.lineTo(82, 155); 
+    ctx.closePath();
+    ctx.fill();
+    ctx.stroke();
+
+    // Braços
+    ctx.fillStyle = "#ff9a9e";
+    ctx.beginPath();
+    ctx.moveTo(92, 95);
+    ctx.lineTo(75, 115);
+    ctx.lineTo(85, 120);
+    ctx.fill();
+    
+    ctx.beginPath();
+    ctx.moveTo(108, 95);
+    ctx.lineTo(125, 115);
+    ctx.lineTo(115, 120);
+    ctx.fill();
+    
+    ctx.beginPath();
+    ctx.moveTo(80, 117);
+    ctx.lineTo(65, 135);
+    ctx.lineWidth = 2.5;
+    ctx.stroke();
+    
+    ctx.beginPath();
+    ctx.moveTo(120, 117);
+    ctx.lineTo(135, 135);
+    ctx.stroke();
+    
+    ctx.lineWidth = 1.5;
+    ctx.fillStyle = "#ffe0bd";
+    ctx.beginPath();
+    ctx.arc(65, 137, 4, 0, Math.PI * 2);
+    ctx.arc(135, 137, 4, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.stroke();
+
+    // Pernas + Sapatos
+    ctx.fillStyle = "#ffe0bd";
+    ctx.beginPath();
+    ctx.rect(88, 155, 6, 30);
+    ctx.rect(106, 155, 6, 30);
+    ctx.fill();
+    ctx.stroke();
+    
+    ctx.fillStyle = "#d81b60";
+    ctx.beginPath();
+    ctx.ellipse(88, 185, 9, 5, 0, 0, Math.PI * 2);
+    ctx.ellipse(112, 185, 9, 5, 0, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.stroke();
+}
+
 function iniciarJogo() {
     palavraSecreta = document.getElementById('inputPalavra').value.toUpperCase().trim();
     if (palavraSecreta.length < 1) return alert("Digite uma palavra!");
@@ -283,6 +418,7 @@ function terminarJogo(venceu) {
         splashTextY = 220;
         animarQueda();
     } else {
+        desenharCenaVitoria();
         mostrarMensagemFim(true);
     }
 }
