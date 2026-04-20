@@ -56,6 +56,104 @@ button:disabled {
 .setup-area {
     margin: 20px;
     text-align: center;
+    position: relative;
+}
+
+.setup-area::before,
+.setup-area::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background: #ff9a9e;
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.setup-area::before {
+    left: -70px;
+}
+
+.setup-area::after {
+    right: -70px;
+}
+
+#livro {
+    margin-top: 30px;
+    width: 200px;
+    height: 150px;
+    background: #8B4513;
+    border: 3px solid #654321;
+    border-radius: 5px;
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    transition: transform 0.2s;
+}
+
+#livro:hover {
+    transform: scale(1.05);
+}
+
+#livro .capa {
+    position: absolute;
+    top: 20px;
+    left: 10px;
+    right: 10px;
+    bottom: 20px;
+    background: #f4e4bc;
+    border: 2px solid #d4af37;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+}
+
+#instrucoes {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    border: 2px solid #333;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 400px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    z-index: 1000;
+}
+
+#instrucoes h3 {
+    margin-top: 0;
+    color: #d81b60;
+}
+
+#instrucoes p {
+    margin: 10px 0;
+    line-height: 1.5;
+}
+
+#instrucoes button {
+    margin-top: 15px;
+    background: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#instrucoes button:hover {
+    background: #2980b9;
 }
 
 input {

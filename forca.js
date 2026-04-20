@@ -332,6 +332,14 @@ function desenharBonecoVitoria() {
     ctx.stroke();
 }
 
+function fecharInstrucoes() {
+    document.getElementById('instrucoes').style.display = 'none';
+}
+
+function abrirInstrucoes() {
+    document.getElementById('instrucoes').style.display = 'block';
+}
+
 function iniciarJogo() {
     palavraSecreta = document.getElementById('inputPalavra').value.toUpperCase().trim();
     if (palavraSecreta.length < 1) return alert("Digite uma palavra!");

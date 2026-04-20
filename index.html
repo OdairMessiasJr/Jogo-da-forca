@@ -16,6 +16,18 @@
         <p>Jogador 1: Digite a palavra secreta abaixo</p>
         <input type="password" id="inputPalavra" placeholder="Ex: TECNOLOGIA">
         <button onclick="iniciarJogo()">Começar!</button>
+        <div id="livro" onclick="abrirInstrucoes()">
+            <div class="capa">Como Jogar Forca</div>
+        </div>
+        <div id="instrucoes">
+            <h3>Instruções do Jogo da Forca</h3>
+            <p>1. O Jogador 1 digita uma palavra secreta.</p>
+            <p>2. O Jogador 2 tenta adivinhar as letras da palavra.</p>
+            <p>3. Cada erro desenha uma parte do boneco na forca.</p>
+            <p>4. Você tem 6 chances antes do boneco cair na lava!</p>
+            <p>5. Acerte todas as letras para vencer e ver a Majuzinha na grama!</p>
+            <button onclick="fecharInstrucoes()">Fechar</button>
+        </div>
     </div>
 
     <div id="jogo">
