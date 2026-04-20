@@ -13,6 +13,9 @@ body {
     border: 2px solid #333;
     border-radius: 8px;
     margin: 20px;
+    width: 200px;
+    height: 250px;
+    aspect-ratio: 200 / 250;
 }
 
 .palavra-container {
@@ -107,4 +110,66 @@ footer span {
 
 #reiniciar {
     background: #e74c3c;
+}
+
+/* Responsividade para tablets */
+@media (max-width: 1024px) {
+    .palavra-container {
+        font-size: 2rem;
+        letter-spacing: 10px;
+    }
+    
+    .teclado {
+        max-width: 500px;
+        gap: 6px;
+    }
+    
+    button {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Responsividade para celulares */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    
+    #canvas-forca {
+        margin: 10px;
+        width: 150px;
+        height: 187.5px;
+    }
+    
+    .palavra-container {
+        font-size: 1.5rem;
+        letter-spacing: 5px;
+        margin: 10px;
+    }
+    
+    .teclado {
+        grid-template-columns: repeat(6, 1fr); /* 6 colunas para caber melhor */
+        max-width: 300px;
+        gap: 4px;
+    }
+    
+    button {
+        padding: 8px;
+        font-size: 0.8rem;
+    }
+    
+    input {
+        padding: 8px;
+        font-size: 0.9rem;
+    }
+    
+    #mensagem {
+        font-size: 1rem;
+    }
+    
+    footer {
+        padding: 15px 0;
+        font-size: 0.9rem;
+    }
 }

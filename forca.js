@@ -336,6 +336,11 @@ function iniciarJogo() {
     palavraSecreta = document.getElementById('inputPalavra').value.toUpperCase().trim();
     if (palavraSecreta.length < 1) return alert("Digite uma palavra!");
 
+    // Ajustar tamanho do canvas interno para corresponder ao CSS
+    const canvas = document.getElementById('canvas-forca');
+    canvas.width = 200;
+    canvas.height = 250;
+
     erros = 0;
     acertos = 0;
     letrasTentadas = [];
