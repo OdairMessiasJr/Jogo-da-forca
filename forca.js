@@ -354,7 +354,7 @@ function iniciarJogo() {
 }
 
 function gerarTeclado() {
-    const letras = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    const letras = "ABCDEFGHIJKLMNOPQRSTUVWXYZÇÁÉÍÓÚÂÊÔÃÕ";
     const tecladoDiv = document.getElementById('teclado');
     tecladoDiv.innerHTML = '';
     letras.split('').forEach(letra => {
